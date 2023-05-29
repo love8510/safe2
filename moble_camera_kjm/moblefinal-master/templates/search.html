@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Entering Information</title>
+</head>
+
+<body>
+    <h1>Take the Camera</h1>
+    <button id="displayButton">Main Display</button>
+    <img src="{{url_for('recognizing')}}">
+    <script>
+        document.getElementById("displayButton").addEventListener("click", function () {
+
+            fetch("/releasing")
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                    window.location.href = "/";
+                });
+
+        });
+
+    </script>
+</body>
+
+</html>
